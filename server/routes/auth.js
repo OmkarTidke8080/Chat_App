@@ -8,9 +8,7 @@ const {
 
 const router = require("express").Router();
 
-router.post("/login", (req, res) => {
-  res.send('login check')
-});
+router.post("/login", login);
 router.get("/login-test", (req, res) => {
   res.send("Login test successfully");
 });
