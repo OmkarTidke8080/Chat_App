@@ -5,12 +5,11 @@ const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/messages");
 const app = express();
 const socket = require("socket.io");
-const path = require('path')
+const path = require("path");
 require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
- 
 
 mongoose
   .connect(process.env.MONGO_URL, {
@@ -31,16 +30,16 @@ app.use("/api/messages", messageRoutes);
 //   res.sendFile(path.join(__dirname, "../public/build/", 'index.html'));
 // })
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Hike Messenger')
-})
+app.get("/", (req, res) => {
+  res.send("Welcome to Hike Messenger");
+});
 
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server started on ${process.env.PORT}`)
 );
 const io = socket(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://chat-app-frontend-gold-phi.vercel.app/",
     credentials: true,
   },
 });
