@@ -10,7 +10,7 @@ const router = require("express").Router();
 
 router.post("/login", login);
 router.get("/login-test", (req, res) => {
-  res.send("Login test successfully");
+  res.send("test successfully");
 });
 router.post("/register", register);
 router.get("/allusers/:id", getAllUsers);
