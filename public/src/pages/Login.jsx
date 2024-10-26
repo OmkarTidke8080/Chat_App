@@ -18,6 +18,10 @@ export default function Login() {
     theme: "dark",
   };
   useEffect(() => {
+    console.log(
+      "lgogin:",
+      localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+    );
     if (localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)) {
       navigate("/");
     }
