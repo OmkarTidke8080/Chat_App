@@ -32,7 +32,7 @@ app.use("/api/messages", messageRoutes);
 // })
 
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.send('Welcome to Hike Messenger')
 })
 
 const server = app.listen(process.env.PORT, () =>
